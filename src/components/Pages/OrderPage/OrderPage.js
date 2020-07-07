@@ -8,8 +8,8 @@ const OrderPage = ({ classNames, data }) => {
   return (
     <div className={cn('OrderPage', classNames)}>
       <div className="OrderPage__IngredientItems">
-        {data.map((ingredient) => (
-          <IngredientItem key={ingredient} name={ingredient} />
+        {data.map((item) => (
+          <IngredientItem key={item} ingredient={item} />
         ))}
       </div>
       <Button variant="contained" size="large" color="primary">

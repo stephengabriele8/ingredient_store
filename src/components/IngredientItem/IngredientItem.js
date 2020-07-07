@@ -6,7 +6,7 @@ import TextField from '@material-ui/core/TextField';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 
-const IngredientItem = ({ classNames, name }) => {
+const IngredientItem = ({ classNames, ingredient: { name, price } }) => {
   const [quantity, setQuantity] = useState(0);
 
   // const handleQuantityChange = (event) => {
