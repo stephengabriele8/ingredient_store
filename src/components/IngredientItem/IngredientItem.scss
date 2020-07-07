@@ -5,4 +5,11 @@
   &__name {
     min-width: 100px;
   }
+  &__quantity {
+    max-width: 55px;
+
+    input {
+      text-align: center;
+    }
+  }
 }

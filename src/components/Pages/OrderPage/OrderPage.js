@@ -9,7 +9,7 @@ const OrderPage = ({ classNames, data }) => {
     <div className={cn('OrderPage', classNames)}>
       <div className="OrderPage__IngredientItems">
         {data.map((ingredient) => (
-          <IngredientItem name={ingredient} />
+          <IngredientItem key={ingredient} name={ingredient} />
         ))}
       </div>
       <Button variant="contained" size="large" color="primary">
