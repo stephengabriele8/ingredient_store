@@ -1,0 +1,8 @@
+.IngredientItem {
+  display: flex;
+  align-items: center;
+
+  &__name {
+    min-width: 100px;
+  }
+}
