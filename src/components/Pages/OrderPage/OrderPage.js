@@ -11,7 +11,6 @@ import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 
 const OrderPage = ({ cart, stores, selectStore, classNames }) => {
-  console.log('cart:', cart);
   const handleStoreChange = (storeName) => {
     const selectedStore = stores.find((s) => s.name === storeName);
     if (selectedStore) {
@@ -19,6 +18,16 @@ const OrderPage = ({ cart, stores, selectStore, classNames }) => {
       selectStore(selectedStore);
     }
   };
+
+  const calculateTotal = () => {
+    const factor = cart.store.costFactor ? cart.store.costFactor : 1;
+    let total = 0;
+    cart.ingredients.forEach((ingredient) => {
+      total += ingredient.quantity * ingredient.price * factor;
+    });
+    return Math.round(total * 100) / 100;
+  };
+
   return (
     <div className={cn('OrderPage', classNames)}>
       <div className="OrderPage__cartContainer">
@@ -40,7 +49,11 @@ const OrderPage = ({ cart, stores, selectStore, classNames }) => {
           </div>
           <div className="OrderPage__ingredientItems">
             {cart.ingredients.map((item) => (
-              <IngredientItem key={item.name} ingredient={item} />
+              <IngredientItem
+                key={item.name}
+                ingredient={item}
+                priceFactor={cart.store.costFactor ? cart.store.costFactor : 1}
+              />
             ))}
           </div>
           <div className="OrderPage__orderDetails">
@@ -65,14 +78,26 @@ const OrderPage = ({ cart, stores, selectStore, classNames }) => {
               </Select>
             </FormControl>
             <div className="OrderPage__costDetails">
-              <div>Subtotal</div>
-              <div>Shipping</div>
-              <div>Total</div>
+              {cart.store.deliveryTimeInDays && (
+                <div>Shipping Time: {cart.store.deliveryTimeInDays} days</div>
+              )}
+              <div>Total: ${calculateTotal()}</div>
             </div>
           </div>
         </div>
       </div>
       <div className="OrderPage__checkoutPane">
+        <h1>Payment Info</h1>
+        <div>Payment method</div>
+        <div className="OrderPage__paymentMethods">
+          <Button variant="outlined" size="large" color="primary">
+            Credit Card
+          </Button>
+          <Button variant="outlined" size="large" color="primary">
+            Paypayl
+          </Button>
+        </div>
+
         <Button variant="contained" size="large" color="primary">
           Checkout
         </Button>

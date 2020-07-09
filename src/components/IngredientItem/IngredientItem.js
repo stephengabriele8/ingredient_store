@@ -19,8 +19,10 @@ const IngredientItem = (props) => {
     ingredient,
     removeIngredient,
     incrementIngredientQuantity,
-    decrementIngredientQuantity
+    decrementIngredientQuantity,
+    priceFactor
   } = props;
+  console.log('priceFactor:', priceFactor);
 
   const { name, quantity, price, img } = ingredient;
 
@@ -47,7 +49,7 @@ const IngredientItem = (props) => {
       </div>
       <div className="IngredientItem__ingredientColumn IngredientItem__ingredientColumn4">
         <div className="IngredientItem__totalPrice">{`$${
-          Math.round(price * quantity * 100) / 100
+          Math.round(price * priceFactor * quantity * 100) / 100
         }`}</div>
         <div className="IngredientItem__deleteButton">
           <IconButton aria-label="delete" onClick={() => removeIngredient(ingredient)}>
@@ -60,8 +62,7 @@ const IngredientItem = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  const { cart } = state;
-  return { cart };
+  return {};
 };
 const mapDispatchToProps = {
   removeIngredient,
