@@ -5,6 +5,7 @@ import OrderPage from './Pages/OrderPage/OrderPage';
 function App() {
   return (
     <div className="App">
+      <header> ChefIq</header>
       <OrderPage />
     </div>
   );

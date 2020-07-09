@@ -4,39 +4,68 @@
   background-color: #ffffff;
   border-radius: 25px;
   margin: 10px;
-  color: black;
-  padding: 5px 20px;
+  padding: 5px 10px;
+  text-align: left;
+
+  &__ingredientDisplay {
+    display: flex;
+    align-items: center;
+  }
 
   &__image {
     padding: 15px;
-    width: 80px;
-    height: 80px;
-    padding: 10px 20px;
+    width: 120px;
+    height: 90px;
+    padding: 5px 20px;
   }
 
   &__name {
-    min-width: 200px;
-    padding: 10px 20px;
+    min-width: 150px;
+    padding: 10px 20px 10px 0px;
   }
   &__cost {
-    padding: 10px 20px;
+    // padding: 10px 20px;
   }
 
   &__deleteButton {
-    padding: 10px 20px;
+    // padding: 10px 20px;
   }
 
   &__quantityGroup {
-    padding: 10px 20px;
+    // padding: 10px 20px;
+    display: flex;
+    button {
+      padding: 5px;
+    }
   }
   &__quantity {
     max-width: 55px;
 
     input {
+      // padding: 30px;
       text-align: center;
     }
   }
   &__totalPrice {
-    padding: 10px 20px;
+    min-width: 60px;
+    // padding: 10px 20px;
+  }
+
+  &__ingredientColumn {
+    display: flex;
+    align-items: center;
+  }
+
+  &__ingredientColumn1 {
+    min-width: 40%;
+  }
+  &__ingredientColumn2 {
+    min-width: 20%;
+  }
+  &__ingredientColumn3 {
+    min-width: 20%;
+  }
+  &__ingredientColumn4 {
+    min-width: 20%;
   }
 }

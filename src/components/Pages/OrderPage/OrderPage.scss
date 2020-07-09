@@ -2,12 +2,72 @@
   background-color: #ededed;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
 
-  &__IngredientItems {
+  &__cartContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 60vw;
+    align-items: center;
+  }
+  &__cart {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 50vw;
+    align-items: center;
+  }
+
+  &__ingredientHeadings {
+    width: 50vw;
+    color: black;
+    display: flex;
+    text-align: left;
+    padding: 0px 20px;
+  }
+  &__ingredientItems {
+    width: 100%;
     padding: 20px 0px;
+  }
+  &__checkoutPane {
+    width: 40vw;
+    min-height: 100vh;
+    background-color: #d6f0e4;
+    border-radius: 25px;
+    margin: 20px 20px 20px 0px;
+  }
+  &__ingredientQuantity {
+    padding: 0px 0px 0px 25px;
+  }
+  &__ingredientColumn1 {
+    width: 40%;
+  }
+  &__ingredientColumn2 {
+    width: 20%;
+  }
+  &__ingredientColumn3 {
+    width: 20%;
+  }
+  &__ingredientColumn4 {
+    width: 20%;
+  }
+
+  &__orderDetails {
+    background-color: #ffffff;
+    border-radius: 25px;
+    width: calc(100% - 20px);
+    margin: 10px;
+    padding: 50px 10px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  &__costDetails {
+    display: flex;
+    flex-direction: column;
+  }
+  &__form {
+    .Select {
+      min-width: 120px;
+    }
   }
 }

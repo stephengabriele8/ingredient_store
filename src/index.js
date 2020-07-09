@@ -6,14 +6,8 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from './redux/reducers';
-import { mockUserIngredientsData, mockStoreLocations } from './mockData';
 
-const initialState = {
-  cart: mockUserIngredientsData
-  // locations: { mockStoreLocations }
-};
-
-const store = createStore(reducers, initialState);
+const store = createStore(reducers);
 
 ReactDOM.render(
   <React.StrictMode>
