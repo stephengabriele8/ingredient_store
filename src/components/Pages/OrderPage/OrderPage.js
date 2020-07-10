@@ -4,8 +4,9 @@ import { connect } from 'react-redux';
 import cn from 'classnames';
 import IngredientItem from './../../IngredientItem/IngredientItem';
 import { selectStore } from './../../../redux/actions/actions';
-import { Button, Input, MenuItem, Select } from '@material-ui/core';
+import { Button, MenuItem, Select } from '@material-ui/core';
 import { roundToDecimalPlace } from './../../../utilities';
+import CheckoutPane from './../../CheckoutPane/CheckoutPane';
 
 const OrderPage = ({ cart, stores, selectStore, classNames }) => {
   const [deliveryTimeInDays, setDeliveryTimeInDays] = useState('----');
@@ -100,129 +101,12 @@ const OrderPage = ({ cart, stores, selectStore, classNames }) => {
           </div>
         </div>
       </div>
-      <div className="OrderPage__checkoutPane">
-        <div className="OrderPage__checkoutInfoContainer">
-          <h1 className="OrderPage__paymentInfoHeading">Payment Info</h1>
-          <div className="OrderPage__cardLabel">Payment method</div>
-          <div className="OrderPage__paymentMethods">
-            <Button
-              variant="outlined"
-              size="large"
-              style={{
-                borderColor: '#ffffff',
-                color: 'white',
-                borderRadius: 50,
-                width: '45%'
-              }}
-            >
-              <div className="OrderPage__paymentGroup">
-                <img
-                  className="OrderPage__paymentTypeImg"
-                  src="https://img.icons8.com/dotty/80/000000/bank-card-back-side.png"
-                  alt="credit card"
-                />
-                <div>Credit Card</div>
-              </div>
-            </Button>
-            <Button
-              variant="outlined"
-              size="large"
-              style={{
-                borderColor: '#ffffff',
-                color: 'white',
-                borderRadius: 50,
-                width: '45%'
-              }}
-            >
-              <div className="OrderPage__paymentGroup">
-                <img
-                  className="OrderPage__paymentTypeImg"
-                  src="https://img.icons8.com/carbon-copy/100/000000/paypal.png"
-                  alt="PayPal"
-                />
-                <div>Paypal</div>
-              </div>
-            </Button>
-          </div>
-          <div className="OrderPage__paymentInfoForm">
-            <div className="OrderPage__cardName OrderPage__cardLabel"> Card Name</div>
-            <Input
-              id="creditCardName"
-              label="Credit Card Name"
-              disableUnderline={true}
-              style={{
-                backgroundColor: 'white',
-                borderRadius: '25px',
-                padding: '0 10px',
-                width: '100%'
-              }}
-            />
-            <div className="OrderPage__cardNumber OrderPage__cardLabel">Card Number</div>
-            <Input
-              id="creditCardNumber"
-              label="Credit Card Number"
-              disableUnderline={true}
-              style={{
-                backgroundColor: 'white',
-                borderRadius: '25px',
-                padding: '0 10px',
-                width: '100%'
-              }}
-            />
-            <div className="OrderPage__exprAndCvv">
-              <div className="OrderPage__cardExpirationContainer OrderPage__privateDetails">
-                <div className="OrderPage__privateDetailsLabel">Card Expiration</div>
-                <Input
-                  id="creditCardExpiration"
-                  label="Credit Card Expiration"
-                  disableUnderline={true}
-                  style={{
-                    backgroundColor: 'white',
-                    borderRadius: '25px',
-                    padding: '0 10px',
-                    width: '100%'
-                  }}
-                />
-              </div>
-              <div className="OrderPage__cardCvvContainer OrderPage__privateDetails">
-                <div className="OrderPage__privateDetailsLabel">CVV</div>
-                <Input
-                  id="cvv"
-                  label="cvv"
-                  disableUnderline={true}
-                  style={{
-                    backgroundColor: 'white',
-                    borderRadius: '25px',
-                    padding: '0 10px',
-                    width: '100%'
-                  }}
-                />
-              </div>
-            </div>
-          </div>
-
-          <Button
-            variant="contained"
-            size="large"
-            color="primary"
-            style={{
-              borderRadius: 50,
-              backgroundColor: '#4cf392',
-              width: '100%',
-              opacity: '0.8',
-              fontSize: '1.2rem'
-            }}
-          >
-            Checkout
-          </Button>
-        </div>
-      </div>
+      <CheckoutPane />
     </div>
   );
 };
 
 const mapStateToProps = (state) => {
-  console.log('state:', state);
   const { cart, stores, store } = state;
   return { cart, stores, store };
 };

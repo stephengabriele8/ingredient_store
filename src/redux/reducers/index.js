@@ -49,7 +49,6 @@ function cart(state = initialStateForCart, action) {
         ingredients: updatedIngredients
       };
     case SELECT_STORE:
-      console.log('In select store');
       return {
         ...state,
         store: action.store
