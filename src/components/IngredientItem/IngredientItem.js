@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './IngredientItem.scss';
 import { connect } from 'react-redux';
 import cn from 'classnames';
@@ -22,7 +22,6 @@ const IngredientItem = (props) => {
     decrementIngredientQuantity,
     priceFactor
   } = props;
-  console.log('priceFactor:', priceFactor);
 
   const { name, quantity, price, img } = ingredient;
 

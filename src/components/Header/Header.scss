@@ -1,0 +1,19 @@
+.Header {
+  &__container {
+    display: flex;
+    align-items: center;
+    padding: 5px 25px;
+  }
+  &__chefmanImage {
+    height: 100px;
+    width: 100px;
+  }
+  &__option {
+    &:hover {
+      border-bottom: 3px solid #4cf392;
+      color: #515151;
+    }
+    border-bottom: 3px solid transparent;
+    margin: 0px 0px 0px 35px;
+  }
+}
