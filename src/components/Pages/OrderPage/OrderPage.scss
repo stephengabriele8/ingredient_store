@@ -1,0 +1,152 @@
+.OrderPage {
+  background-color: #ededed;
+  min-height: 100vh;
+  display: flex;
+
+  &__cartContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 60vw;
+    align-items: center;
+  }
+  &__shoppingCartHeading {
+    margin-right: auto;
+    padding: 0px 0px 0px 25px;
+  }
+  &__paymentInfoHeading {
+    margin-right: auto;
+  }
+  &__cart {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    align-items: center;
+  }
+
+  &__Button {
+    color: white;
+  }
+  .MuiButton-text {
+    color: white;
+  }
+
+  &__ingredientHeadings {
+    width: 100%;
+    color: #515151;
+    display: flex;
+    text-align: left;
+    padding: 0px 30px;
+  }
+  &__ingredientItems {
+    width: 100%;
+    padding: 15px 0px 0px 0px;
+  }
+  &__checkoutPane {
+    width: 40vw;
+    height: 80vh;
+    background-color: #454d49;
+    color: white;
+    border-radius: 25px;
+    margin: 20px 20px 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__paymentTypeImg {
+    width: 50px;
+    height: 50px;
+    margin: 0px 10px 0px 0px;
+    filter: brightness(0) invert(1);
+  }
+  &__ingredientQuantity {
+    padding: 0px 0px 0px 25px;
+  }
+  &__ingredientColumn1 {
+    width: 40%;
+  }
+  &__ingredientColumn2 {
+    width: 20%;
+  }
+  &__ingredientColumn3 {
+    width: 20%;
+  }
+  &__ingredientColumn4 {
+    width: 20%;
+  }
+
+  &__orderDetails {
+    background-color: #ffffff;
+    border-radius: 25px;
+    width: calc(100% - 20px);
+    padding: 30px 10px;
+    height: 120px;
+    display: flex;
+    justify-content: space-around;
+    -webkit-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.33);
+    -moz-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.33);
+    box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.33);
+  }
+  &__costDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 210px;
+    height: 100%;
+    padding: 5px 5px;
+  }
+  &__storeForm {
+    display: flex;
+    align-items: center;
+    padding: 5px 5px;
+  }
+  &__storeSelectLabel {
+    padding: 0px 10px;
+  }
+  &__paymentMethods {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__paymentGroup {
+    color: 'white';
+  }
+  &__paymentInfoForm {
+    width: 100%;
+  }
+  &__paymentGroup {
+    width: 80%;
+    display: flex;
+    align-items: center;
+  }
+  &__exprAndCvv {
+    display: flex;
+  }
+  &__privateDetails {
+    width: 45%;
+    padding: 30px 0px;
+  }
+  &__privateDetailsLabel {
+    text-align: left;
+    width: 100%;
+    padding: 0px 0px 15px 10px;
+  }
+  &__cardCvvContainer {
+    margin-left: auto;
+  }
+  &__cardLabel {
+    padding: 30px 10px 15px 10px;
+    text-align: left;
+  }
+  &__checkoutInfoContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 80%;
+    padding: 60px 10px;
+  }
+  &__costDetailsSubgroup {
+    display: flex;
+    justify-content: space-between;
+  }
+}
