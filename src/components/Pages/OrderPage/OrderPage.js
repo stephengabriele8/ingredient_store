@@ -3,15 +3,8 @@ import './OrderPage.scss';
 import { connect } from 'react-redux';
 import cn from 'classnames';
 import IngredientItem from './../../IngredientItem/IngredientItem';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import InputLabel from '@material-ui/core/InputLabel';
-import Input from '@material-ui/core/Input';
-
 import { selectStore } from './../../../redux/actions/actions';
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
+import { Button, Input, MenuItem, Select } from '@material-ui/core';
 
 const OrderPage = ({ cart, stores, selectStore, classNames }) => {
   const handleStoreChange = (storeName) => {
@@ -93,7 +86,7 @@ const OrderPage = ({ cart, stores, selectStore, classNames }) => {
       </div>
       <div className="OrderPage__checkoutPane">
         <div className="OrderPage__checkoutInfoContainer">
-          <h1>Payment Info</h1>
+          <h1 className="OrderPage__paymentInfoHeading">Payment Info</h1>
           <div className="OrderPage__cardLabel">Payment method</div>
           <div className="OrderPage__paymentMethods">
             <Button
@@ -192,7 +185,18 @@ const OrderPage = ({ cart, stores, selectStore, classNames }) => {
             </div>
           </div>
 
-          <Button variant="contained" size="large" color="primary" style={{ borderRadius: 50 }}>
+          <Button
+            variant="contained"
+            size="large"
+            color="primary"
+            style={{
+              borderRadius: 50,
+              backgroundColor: '#4cf392',
+              width: '100%',
+              opacity: '0.8',
+              fontSize: '1.2rem'
+            }}
+          >
             Checkout
           </Button>
         </div>

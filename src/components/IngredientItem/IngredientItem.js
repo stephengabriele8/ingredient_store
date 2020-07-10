@@ -28,7 +28,7 @@ const IngredientItem = (props) => {
   return (
     <div className={cn('IngredientItem', classNames)}>
       <div className="IngredientItem__ingredientDisplay IngredientItem__ingredientColumn IngredientItem__ingredientColumn1">
-        <img className="IngredientItem__image" src={img} alt="ingredient item" />
+        <img className="IngredientItem__ingredientImage" src={img} alt="ingredient item" />
         <div className="IngredientItem__name">{name}</div>
       </div>
       <div className="IngredientItem__cost IngredientItem__ingredientColumn IngredientItem__ingredientColumn2">{`$${price}`}</div>

@@ -15,11 +15,12 @@
     align-items: center;
   }
 
-  &__image {
+  &__ingredientImage {
     padding: 15px;
     width: 120px;
     height: 90px;
     padding: 5px 20px;
+    border-radius: 25px;
   }
 
   &__name {
