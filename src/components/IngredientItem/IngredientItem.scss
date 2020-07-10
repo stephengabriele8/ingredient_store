@@ -1,0 +1,75 @@
+.IngredientItem {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 25px;
+  margin: 10px;
+  padding: 5px 10px;
+  text-align: left;
+  -webkit-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.33);
+  -moz-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.33);
+  box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.33);
+
+  &__ingredientDisplay {
+    display: flex;
+    align-items: center;
+  }
+
+  &__ingredientImage {
+    padding: 15px;
+    width: 120px;
+    height: 90px;
+    padding: 5px 20px;
+    border-radius: 25px;
+  }
+
+  &__name {
+    min-width: 150px;
+    padding: 10px 20px 10px 0px;
+  }
+  &__cost {
+    // padding: 10px 20px;
+  }
+
+  &__deleteButton {
+    // padding: 10px 20px;
+  }
+
+  &__quantityGroup {
+    // padding: 10px 20px;
+    display: flex;
+    button {
+      padding: 5px;
+    }
+  }
+  &__quantity {
+    max-width: 55px;
+
+    input {
+      // padding: 30px;
+      text-align: center;
+    }
+  }
+  &__totalPrice {
+    min-width: 60px;
+    // padding: 10px 20px;
+  }
+
+  &__ingredientColumn {
+    display: flex;
+    align-items: center;
+  }
+
+  &__ingredientColumn1 {
+    min-width: 40%;
+  }
+  &__ingredientColumn2 {
+    min-width: 20%;
+  }
+  &__ingredientColumn3 {
+    min-width: 20%;
+  }
+  &__ingredientColumn4 {
+    min-width: 20%;
+  }
+}
