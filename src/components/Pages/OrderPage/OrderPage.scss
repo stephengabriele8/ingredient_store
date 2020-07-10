@@ -25,13 +25,6 @@
     align-items: center;
   }
 
-  &__Button {
-    color: white;
-  }
-  .MuiButton-text {
-    color: white;
-  }
-
   &__ingredientHeadings {
     width: 100%;
     color: #515151;
@@ -42,17 +35,6 @@
   &__ingredientItems {
     width: 100%;
     padding: 15px 0px 0px 0px;
-  }
-  &__checkoutPane {
-    width: 40vw;
-    height: 80vh;
-    background-color: #454d49;
-    color: white;
-    border-radius: 25px;
-    margin: 20px 20px 20px 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
   &__paymentTypeImg {
     width: 50px;
@@ -103,47 +85,6 @@
   }
   &__storeSelectLabel {
     padding: 0px 10px;
-  }
-  &__paymentMethods {
-    display: flex;
-    justify-content: space-between;
-  }
-  &__paymentGroup {
-    color: 'white';
-  }
-  &__paymentInfoForm {
-    width: 100%;
-  }
-  &__paymentGroup {
-    width: 80%;
-    display: flex;
-    align-items: center;
-  }
-  &__exprAndCvv {
-    display: flex;
-  }
-  &__privateDetails {
-    width: 45%;
-    padding: 30px 0px;
-  }
-  &__privateDetailsLabel {
-    text-align: left;
-    width: 100%;
-    padding: 0px 0px 15px 10px;
-  }
-  &__cardCvvContainer {
-    margin-left: auto;
-  }
-  &__cardLabel {
-    padding: 30px 10px 15px 10px;
-    text-align: left;
-  }
-  &__checkoutInfoContainer {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 80%;
-    padding: 60px 10px;
   }
   &__costDetailsSubgroup {
     display: flex;

@@ -6,6 +6,7 @@ import IngredientItem from './../../IngredientItem/IngredientItem';
 import { selectStore } from './../../../redux/actions/actions';
 import { Button, Input, MenuItem, Select } from '@material-ui/core';
 import { roundToDecimalPlace } from './../../../utilities';
+import CheckoutPane from './../../CheckoutPane/CheckoutPane';
 
 const OrderPage = ({ cart, stores, selectStore, classNames }) => {
   const [deliveryTimeInDays, setDeliveryTimeInDays] = useState('----');
@@ -100,7 +101,8 @@ const OrderPage = ({ cart, stores, selectStore, classNames }) => {
           </div>
         </div>
       </div>
-      <div className="OrderPage__checkoutPane">
+      <CheckoutPane />
+      {/* <div className="OrderPage__checkoutPane">
         <div className="OrderPage__checkoutInfoContainer">
           <h1 className="OrderPage__paymentInfoHeading">Payment Info</h1>
           <div className="OrderPage__cardLabel">Payment method</div>
@@ -216,13 +218,12 @@ const OrderPage = ({ cart, stores, selectStore, classNames }) => {
             Checkout
           </Button>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
 
 const mapStateToProps = (state) => {
-  console.log('state:', state);
   const { cart, stores, store } = state;
   return { cart, stores, store };
 };

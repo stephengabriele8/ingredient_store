@@ -32,9 +32,9 @@ export const mockUserIngredientsData = [
 ];
 
 export const mockStoreLocations = [
-  { name: 'Walmart', costFactor: 1.2, deliveryTimeInDays: 1 },
+  { name: 'Walmart', costFactor: 1.2, deliveryTimeInDays: 2 },
   { name: 'Meijer', costFactor: 1.2, deliveryTimeInDays: 4 },
-  { name: 'Kroger', costFactor: 1.3, deliveryTimeInDays: 2 },
-  { name: 'Aldi', costFactor: 1.0, deliveryTimeInDays: 2 },
+  { name: 'Kroger', costFactor: 1.3, deliveryTimeInDays: 5 },
+  { name: 'Aldi', costFactor: 1.0, deliveryTimeInDays: 3 },
   { name: 'Target', costFactor: 1.5, deliveryTimeInDays: 3 }
 ];
