@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './OrderPage.scss';
 import { connect } from 'react-redux';
 import cn from 'classnames';
@@ -7,19 +7,36 @@ import { selectStore } from './../../../redux/actions/actions';
 import { Button, Input, MenuItem, Select } from '@material-ui/core';
 
 const OrderPage = ({ cart, stores, selectStore, classNames }) => {
+  const [deliveryTimeInDays, setDeliveryTimeInDays] = useState('----');
+  const [costFactor, setCostFactor] = useState(1);
+
+  useEffect(() => {
+    if (cart.store.deliveryTimeInDays) {
+      setDeliveryTimeInDays(cart.store.deliveryTimeInDays);
+    } else {
+      setDeliveryTimeInDays('----');
+    }
+  }, [cart.store.deliveryTimeInDays]);
+
+  useEffect(() => {
+    if (cart.store.costFactor) {
+      setCostFactor(cart.store.costFactor);
+    } else {
+      setCostFactor(1);
+    }
+  }, [cart.store.costFactor]);
+
   const handleStoreChange = (storeName) => {
     const selectedStore = stores.find((s) => s.name === storeName);
     if (selectedStore) {
-      console.log('selectedStore:', selectedStore);
       selectStore(selectedStore);
     }
   };
 
   const calculateTotal = () => {
-    const factor = cart.store.costFactor ? cart.store.costFactor : 1;
     let total = 0;
     cart.ingredients.forEach((ingredient) => {
-      total += ingredient.quantity * ingredient.price * factor;
+      total += ingredient.quantity * ingredient.price * costFactor;
     });
     return Math.round(total * 100) / 100;
   };
@@ -45,11 +62,7 @@ const OrderPage = ({ cart, stores, selectStore, classNames }) => {
           </div>
           <div className="OrderPage__ingredientItems">
             {cart.ingredients.map((item) => (
-              <IngredientItem
-                key={item.name}
-                ingredient={item}
-                priceFactor={cart.store.costFactor ? cart.store.costFactor : 1}
-              />
+              <IngredientItem key={item.name} ingredient={item} priceFactor={costFactor} />
             ))}
           </div>
           <div className="OrderPage__orderDetails">
@@ -74,11 +87,8 @@ const OrderPage = ({ cart, stores, selectStore, classNames }) => {
               </Select>
             </div>
             <div className="OrderPage__costDetails">
-              {cart.store.deliveryTimeInDays ? (
-                <div>Shipping Time: {cart.store.deliveryTimeInDays} days</div>
-              ) : (
-                <div>Shipping Time: ----</div>
-              )}
+              <div>Shipping Time: {deliveryTimeInDays} days</div>
+
               <div>Total: ${calculateTotal()}</div>
             </div>
           </div>
