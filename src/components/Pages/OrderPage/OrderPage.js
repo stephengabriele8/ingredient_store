@@ -5,6 +5,7 @@ import cn from 'classnames';
 import IngredientItem from './../../IngredientItem/IngredientItem';
 import { selectStore } from './../../../redux/actions/actions';
 import { Button, Input, MenuItem, Select } from '@material-ui/core';
+import { roundToDecimalPlace } from './../../../utilities';
 
 const OrderPage = ({ cart, stores, selectStore, classNames }) => {
   const [deliveryTimeInDays, setDeliveryTimeInDays] = useState('----');
@@ -38,7 +39,7 @@ const OrderPage = ({ cart, stores, selectStore, classNames }) => {
     cart.ingredients.forEach((ingredient) => {
       total += ingredient.quantity * ingredient.price * costFactor;
     });
-    return Math.round(total * 100) / 100;
+    return roundToDecimalPlace(total, 2);
   };
 
   return (
@@ -87,9 +88,14 @@ const OrderPage = ({ cart, stores, selectStore, classNames }) => {
               </Select>
             </div>
             <div className="OrderPage__costDetails">
-              <div>Shipping Time: {deliveryTimeInDays} days</div>
-
-              <div>Total: ${calculateTotal()}</div>
+              <div className="OrderPage__shippingDetailsGroup OrderPage__costDetailsSubgroup">
+                <div>Shipping ETA: </div>
+                <div>{deliveryTimeInDays} days</div>
+              </div>
+              <div className="OrderPage__totalDetailsGroup OrderPage__costDetailsSubgroup">
+                <div>Total: </div>
+                <div>${calculateTotal()}</div>
+              </div>
             </div>
           </div>
         </div>

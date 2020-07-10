@@ -7,6 +7,7 @@ import TextField from '@material-ui/core/TextField';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 import DeleteIcon from '@material-ui/icons/Delete';
+import { roundToDecimalPlace } from './../../utilities';
 import {
   removeIngredient,
   incrementIngredientQuantity,
@@ -47,9 +48,9 @@ const IngredientItem = (props) => {
         </IconButton>
       </div>
       <div className="IngredientItem__ingredientColumn IngredientItem__ingredientColumn4">
-        <div className="IngredientItem__totalPrice">{`$${
-          Math.round(price * priceFactor * quantity * 100) / 100
-        }`}</div>
+        <div className="IngredientItem__totalPrice">
+          {`$${roundToDecimalPlace(price * priceFactor * quantity, 2)}`}
+        </div>
         <div className="IngredientItem__deleteButton">
           <IconButton aria-label="delete" onClick={() => removeIngredient(ingredient)}>
             <DeleteIcon />
