@@ -92,49 +92,110 @@ const OrderPage = ({ cart, stores, selectStore, classNames }) => {
         </div>
       </div>
       <div className="OrderPage__checkoutPane">
-        <h1>Payment Info</h1>
-        <div>Payment method</div>
-        <div className="OrderPage__paymentMethods">
-          <Button
-            variant="outlined"
-            size="large"
-            style={{
-              borderColor: '#ffffff',
-              color: 'white',
-              borderRadius: 50
-            }}
-          >
-            <img
-              src="https://img.icons8.com/dotty/80/000000/bank-card-back-side.png"
-              alt="credit card"
+        <div className="OrderPage__checkoutInfoContainer">
+          <h1>Payment Info</h1>
+          <div className="OrderPage__cardLabel">Payment method</div>
+          <div className="OrderPage__paymentMethods">
+            <Button
+              variant="outlined"
+              size="large"
+              style={{
+                borderColor: '#ffffff',
+                color: 'white',
+                borderRadius: 50,
+                width: '45%'
+              }}
+            >
+              <div className="OrderPage__paymentGroup">
+                <img
+                  className="OrderPage__paymentTypeImg"
+                  src="https://img.icons8.com/dotty/80/000000/bank-card-back-side.png"
+                  alt="credit card"
+                />
+                <div>Credit Card</div>
+              </div>
+            </Button>
+            <Button
+              variant="outlined"
+              size="large"
+              style={{
+                borderColor: '#ffffff',
+                color: 'white',
+                borderRadius: 50,
+                width: '45%'
+              }}
+            >
+              <div className="OrderPage__paymentGroup">
+                <img
+                  className="OrderPage__paymentTypeImg"
+                  src="https://img.icons8.com/carbon-copy/100/000000/paypal.png"
+                  alt="PayPal"
+                />
+                <div>Paypal</div>
+              </div>
+            </Button>
+          </div>
+          <div className="OrderPage__paymentInfoForm">
+            <div className="OrderPage__cardName OrderPage__cardLabel"> Card Name</div>
+            <Input
+              id="creditCardName"
+              label="Credit Card Name"
+              disableUnderline={true}
+              style={{
+                backgroundColor: 'white',
+                borderRadius: '25px',
+                padding: '0 10px',
+                width: '100%'
+              }}
             />
-            <div>Credit Card</div>
-          </Button>
-          <Button
-            variant="outlined"
-            size="large"
-            style={{
-              borderColor: '#ffffff',
-              color: 'white',
-              borderRadius: 50
-            }}
-          >
-            <div className="OrderPage__paymentGroup">
-              <img src="https://img.icons8.com/carbon-copy/100/000000/paypal.png" alt="PayPal" />
-              <div>Paypal</div>
+            <div className="OrderPage__cardNumber OrderPage__cardLabel">Card Number</div>
+            <Input
+              id="creditCardNumber"
+              label="Credit Card Number"
+              disableUnderline={true}
+              style={{
+                backgroundColor: 'white',
+                borderRadius: '25px',
+                padding: '0 10px',
+                width: '100%'
+              }}
+            />
+            <div className="OrderPage__exprAndCvv">
+              <div className="OrderPage__cardExpirationContainer OrderPage__privateDetails">
+                <div className="OrderPage__privateDetailsLabel">Card Expiration</div>
+                <Input
+                  id="creditCardExpiration"
+                  label="Credit Card Expiration"
+                  disableUnderline={true}
+                  style={{
+                    backgroundColor: 'white',
+                    borderRadius: '25px',
+                    padding: '0 10px',
+                    width: '100%'
+                  }}
+                />
+              </div>
+              <div className="OrderPage__cardCvvContainer OrderPage__privateDetails">
+                <div className="OrderPage__privateDetailsLabel">CVV</div>
+                <Input
+                  id="cvv"
+                  label="cvv"
+                  disableUnderline={true}
+                  style={{
+                    backgroundColor: 'white',
+                    borderRadius: '25px',
+                    padding: '0 10px',
+                    width: '100%'
+                  }}
+                />
+              </div>
             </div>
+          </div>
+
+          <Button variant="contained" size="large" color="primary" style={{ borderRadius: 50 }}>
+            Checkout
           </Button>
         </div>
-        <FormControl className="OrderPage__paymentForm" style={{ minWidth: 120 }}>
-          <InputLabel>something else</InputLabel>
-          <Input>Something</Input>
-          <TextField id="creditCardInfo" label="Credit Card Info" />
-          <TextField id="creditCardInfo" label="Credit Card Info" />
-        </FormControl>
-
-        <Button variant="contained" size="large" color="primary" style={{ borderRadius: 50 }}>
-          Checkout
-        </Button>
       </div>
     </div>
   );
